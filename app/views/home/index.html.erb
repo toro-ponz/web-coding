@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+  <p>
+    <%= current_user.id %>ようこそ<strong><%= current_user.email %></strong>さん
+  </p>
+
+  <div id="data-menu">
+    <a href="/data/new/file/"><p>新規ファイル作成</p></a>
+    <a href="/data/new/directory/"><p>新規ディレクトリ作成</p></a>
+    <a href="/data/delete/"><p>ファイル・ディレクトリ削除</p></a>
+    <a href="/user/"><p>サイトを確認</p></a>
+  </div>
+
+  <% if @data.present? %>
+    <ul id="data">
+      <% @data.each do |item| %>
+        <% if item.type == 'file' %>
+          <li class="file-data">
+            <%= item.name %>
+          </li>
+        <% elsif item.type == 'directory' %>
+          <li class="directory-data">
+            <%= item.name %>
+          </li>
+        <% else %>
+          <li class="data-error">
+            エラーコンテンツ
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= link_to "Settings", edit_user_registration_path, :class => "navbar-link" %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "navbar-link" %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+<% end %>

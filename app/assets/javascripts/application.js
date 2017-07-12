@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('.message').on('click', function() {
+    $(this).hide(300);
+  });
+});

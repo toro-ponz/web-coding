@@ -13,3 +13,205 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  color: black;
+  background-color: #F0F0F0;
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+p.center {
+  text-align: center;
+}
+
+span.center {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  width: 100%;
+  max-width: 300px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  border: 1px solid #20C0D0;
+  background: white;
+  color: #20C0D0;
+}
+
+input[type="submit"]:hover {
+  border: 1px solid gray;
+  background: #20C0D0;
+  color: white;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  border: 1px solid gray;
+  border-radius: 2px;
+  height: 25px;
+  line-height: 25px;
+}
+
+input[type="checkbox"] {
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+}
+
+.left-float {
+  float: left;
+}
+
+.right-float {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.sign-button {
+  color: #20C0D0;
+  background: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #30D0E0;
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;
+  width: 100px;
+  margin: 15px;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+
+.sign-button:hover {
+  color: white;
+  background: #20C0D0;
+  border: 1px solid white;
+}
+
+.message p {
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  color: white;
+}
+
+#header-wrapper {
+  width: 100%;
+  height: 75px;
+  color: white;
+  background: #20C0D0;
+}
+
+#header {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#header-content {
+  width: 100%;
+}
+
+#page-title {
+  line-height: 75px;
+}
+
+#title {
+  font-size: 34px;
+  line-height: 75px;
+  color: white;
+}
+
+#header-menu {
+  height: 75px;
+  width: auto;
+}
+
+#contents-wrapper {
+  width: 100%;
+}
+
+#contents {
+  background: white;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+}
+
+#content {
+  width: 690px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+  float: left;
+}
+
+#sidebar {
+  width: 290px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+  float: left;
+}
+
+#notice {
+  background: orange;
+}
+
+#alert {
+  background: red;
+}
+
+#footer-wrapper {
+  background: lightgray;
+  width: 100%;
+  height: 50px;
+}
+
+#footer {
+  width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+  line-height: 50px;
+}

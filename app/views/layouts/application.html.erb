@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WebCoding</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>WebCoding</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <!-- ヘッダー -->
+    <div id="header-wrapper">
+      <div id="header">
+        <!-- タイトル -->
+        <div id="header-content">
+          <div id="page-title" class="left-float">
+            <a href="/">
+              <span id="title">Web Coding Service</span>
+            </a>
+          </div>
 
-</body>
+          <div id="header-menu" class="right-float">
+            <% if user_signed_in? %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => "sign-button" %>
+            <% else %>
+              <%= link_to "ログイン", new_user_session_path, :class => 'sign-button' %>
+            <% end %>
+          </div>
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ページコンテント -->
+    <div id="contents-wrapper">
+
+      <% if notice %>
+      <!-- Notice表示 -->
+      <div id="notice" class="message">
+        <p><%= notice %></p>
+      </div>
+      <% end %>
+
+      <% if alert %>
+      <!-- Alert表示 -->
+      <div id="alert" class="message">
+        <p><%= alert %></p>
+      </div>
+      <% end %>
+
+      <div id="contents">
+        <!-- コンテント -->
+        <div id="content">
+          <%= yield %>
+        </div>
+        <!-- サイドバー -->
+        <div id="sidebar">サイドバー</div>
+
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div id="footer-wrapper">
+      <div id="footer">
+        <span class="center">© 2017 とろゝ(@toro_ponz)</span>
+      </div>
+    </div>
+
+  </body>
 </html>
