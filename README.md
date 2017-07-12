@@ -18,7 +18,18 @@
 
 ## 使用(動作の確認)方法
 ### 1. このリポジトリをクローン又はZipでダウンロードする  
-### 2. コマンドプロンプト、PowerShell、Terminalなどでそのディレクトリに移動し、以下のコマンドを順に実行する
+### 2. configディレクトリ下に以下の内容のsecrets.ymlを作成し★に任意の値を記載する
+```
+development:
+  secret_key_base: ★
+
+test:
+  secret_key_base: ★
+
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+```
+### 3. コマンドプロンプト、Terminalなどでリポジトリのルートディレクトリに移動し、以下のコマンドを順に実行する
 ```
 gem install bundler
 ```
